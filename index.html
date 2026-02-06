@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Darling❤️</title>
+
+<style>
+*{box-sizing:border-box} 
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:#fff;
+  overflow-x:hidden;
+  text-align:center;
+}
+.hidden{display:none!important}
+
+/* BUTTON */
+.btn{
+  padding:12px 30px;
+  border-radius:30px;
+  border:none;
+  background:#fff;
+  color:#ff5a87;
+  font-size:1.1em;
+  cursor:pointer;
+  margin:10px;
+}
+
+/* SCREENS */
+.screen{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  z-index:1000;
+}
+
+/* 🌸 INTRO FLOWERS */
+#intro{overflow:hidden}
+.flower{
+  position:absolute;
+  top:-30px;
+  font-size:24px;
+  animation:fall 6s linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh);opacity:0;}
+}
+
+/* ❤️ HEART COUNTDOWN — FIXED */
+.heartBox{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.heart{
+  width:220px;
+  height:200px;
+  position:relative;
+  animation:beat 1s infinite;
+}
+
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:180px;
+  background:red;
+  border-radius:120px 120px 0 0;
+  top:0;
+}
+
+.heart::before{
+  left:110px;
+  transform:rotate(-45deg);
+  transform-origin:0 100%;
+}
+
+.heart::after{
+  left:0;
+  transform:rotate(45deg);
+  transform-origin:100% 100%;
+}
+
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+}
+
+.count{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:3em;
+  font-weight:bold;
+  z-index:2;
+}
+
+.name{
+  margin-top:50px;
+  font-size:2.4em;
+  animation:glow 2s infinite;
+}
+@keyframes glow{
+  0%,100%{text-shadow:0 0 5px #fff;}
+  50%{text-shadow:0 0 20px #fff;}
+}
+
+/* MAIN */
+.container{padding:60px 20px}
+.card{
+  background:rgba(255,255,255,0.15);
+  padding:40px;
+  border-radius:20px;
+  max-width:750px;
+  margin:0 auto 50px;
+}
+
+/* LETTER */
+#letter{
+  white-space:pre-line;
+  border-left:3px solid #fff;
+  padding-left:15px;
+  text-align:left;
+  font-size:1.2em;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+.gallery img{
+  width:100%;
+  height:auto;
+  max-height:260px;
+  object-fit:contain;
+  background:rgba(255,255,255,0.2);
+  padding:6px;
+  border-radius:15px;
+}
+
+/* FLOAT HEARTS */
+.float{
+  position:fixed;
+  bottom:-20px;
+  font-size:24px;
+  animation:up 6s linear forwards;
+}
+@keyframes up{
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+/* BALLOONS */
+.balloon{
+  position:fixed;
+  bottom:-60px;
+  font-size:30px;
+  animation:up 6s linear forwards;
+  z-index:2000;   
+  pointer-events:none;
+}
+
+/* CAKE */
+#cake{
+  font-size:6em;
+  position:relative;
+}
+#knife{
+  font-size:4em;
+  position:absolute;
+  top:-60px;
+  left:50%;
+  transform:translateX(-50%);
+  animation:cut 1.2s forwards;
+}
+@keyframes cut{
+  to{top:120px;opacity:0;}
+}
+  .confetti{
+  position:fixed;
+  top:-10px;
+  width:8px;
+  height:14px;
+  background:red;
+  opacity:0.9;
+  animation:confettiFall 3s linear forwards;
+  z-index:3000;
+}
+
+@keyframes confettiFall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+.cinematic{
+  opacity:0;
+  transform:scale(0.9);
+  animation:cinematicFade 2.5s ease forwards;
+}
+
+@keyframes cinematicFade{
+  0%{
+    opacity:0;
+    transform:scale(0.9);
+    filter:blur(6px);
+  }
+  60%{
+    opacity:1;
+    transform:scale(1.03);
+    filter:blur(0);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.cinematic h1{
+  animation:glowText 2s infinite;
+}
+
+@keyframes glowText{
+  0%,100%{text-shadow:0 0 10px #fff;}
+  50%{text-shadow:0 0 25px #ffb3d9;}
+}
+
+.name-reveal span{
+  opacity:0;
+  display:inline-block;
+  transform:translateY(20px);
+  animation:letterIn 0.6s ease forwards;
+}
+
+@keyframes letterIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🌸 INTRO -->
+<div id="intro" class="screen">
+  <h1>Welcome To The Most Prettiest Person on Earth 💖😍 </h1>
+  <h2>    The Most Deserving Queen Of My Life 👑👀  </h2>
+  <button class="btn" onclick="toReady()">Apne Gift Ko Dekhne Ke Liye Apne Pyare Haaton Se Yaha Click Kariye 😍🎁</button>
+</div>
+
+<div id="ready" class="screen hidden">
+  <h1>Are You Ready For The Surprise My Medum Jii? 💝💞</h1>
+  <br>
+  <h2>Apne Seat Belts Laga Lijiyega, Kyuki Aaj Aap Butterflies Garden Mei Lost Ho Sakti Ho!! 😁😁</h2>
+  <br>
+  <button class="btn" onclick="introCountdown()">Take A Step Towards Your Surprise 🫣💘</button>
+</div>
+
+<div id="introCount" class="screen hidden">
+  <div class="heartBox">
+    <div class="heart">
+      <div class="count" id="iNum">10</div>
+    </div>
+    <div class="name">Meri Ardhangini Priya Jii ❤️💝</div>
+    <br>
+    <h2>    Abhi Blushy Blushy Mood Hai Na Meri Jaan Ka 👀👀    </h2>
+    <br>
+    <h2>      I Hope You Are Gonna Love This A Lot!! 😁😁        </h2>
+  </div>
+</div>
+
+<!-- 🎂 MAIN -->
+<div id="main" class="container hidden">
+
+  <div class="card">
+    <h1>Happiest Birthday Meri Loving Darling 💞💞🫂🥳</h1>
+    <button class="btn" onclick="toggleMusic()">🎶 Ek Pyara Sa Ganna Sunne Ke Liye Yaha Press Kariye!!☺️ </button>
+  </div>
+
+  <div class="card">
+    <h2>💌 Mere Dil Ki Baat (Lekin Mera Dil To Aapke Paas Hai Na💖🔒) </h2>
+    <div id="letter"></div>
+  </div>
+
+  <div class="card">
+    <h2>Hamari Journey Abhi Tak</h2>
+    <p>🌹 5th September, 2025 – The Day I Proposed You💍❤️(Can't Forget That Moment) </p>
+    <br>
+    <p>💖 13th September, 2025 - The Day We Came In Relationship Everything Changed.💗😘💋🫂(The Beautiful Part Of My Life)</p>
+    <br>
+    <p>🥳 7th February, 2026 - The Day Of My Princess 👑, The Day Of My World 🫂</p>
+    <br>
+    <p>👀 Till Today We Have Completed - 147 Days Or To Be More Precise 4 Months 25 Days🔥🔥</p>
+    <br>
+    <p>🙈 The Days, The Time I Spent With You Is So Precious, Valuable, Fantastic And Memorable For Me. Aapki Ched Chad Se Dil Bahut Happy Rehta Hai. Aapke Cute Cute Harkatein, Har Pal Yaad Rehti Hai. 🫂😘</p>
+  </div>
+
+  <div class="card">
+    <h2>Meri Sonnaaa Ki Kuch Cutuu Photos 🎀🎀</h2>
+    <div class="gallery">
+      <img src="photos/photo1.jpg">
+      <img src="photos/photo2.jpg">
+      <img src="photos/photo3.jpg">
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="btn" onclick="showSurprise()">Ek Propsal Message Hai Aapke Liye 👉🫣👈</button>
+    <p id="surprise" class="hidden">
+      Mei Lifetime Ke Liye Aapka Pookie Ban Kar Rehna Chahta Hu, My Choti Don🎀🎀<br>
+      You Are Going To Be My Official Wiffuu, It's Confirmed 🫂🫂💝💝<br>
+      Aapke Life Ke Har Manzil Par, Mei Aapka Sath Nibhana Chahata hu....👩‍❤️‍💋‍👨👩‍❤️‍💋‍👨<br>
+      Mere Pyare Vihaan Aur Dhriti Ki Mummy Bana Pasand Karengi Na??💍👀<br>
+      Aapka Jo Bhi Decision Ho I'll Respect It Mu Cutuuu Badmos😘😘<br>
+      You Take Your Time For Your Decision, Mei Wait Karunga Jaise Aapke Haa Ke Liye Wait Kiya Tha September 2025 Mei 💕😁<br>
+      Phele Apne Gift Ko Pura Enjoy Kariye, Phir araam se Bataiyega Sab Kuch 😄😄<br>
+      Enjoy Your Gift Jaanuu, Meri Kuchikuu, My Dearest Chaand 😘😘❣️❣️<br>
+    </p>
+    <br>
+    <button class="btn" onclick="startCelebration()">Ek Chotuu Sa Pyara Sa Celebration Karne Ke Liye Yaha Aaye!!❤️🥳</button>
+    <h3>Jaan Bas Jo Gaana Aapne Start Kiya Tha, Agar Pura Sunna Hai To Sunn Lijiye </h3>
+    <h3>Agar Nahi Sunna Hoga Aur, To Uss Button Pe Ek Aur Baar Click Kar Ke Hi Celebrate Pe Click Kariyega</h3>
+    <h3>Agar Aapne Ganna Complete Ho Gaya Ho, To You Can Directly Go To Celebrate.😄</h3>
+  </div>
+</div>
+
+<!-- 🎉 CELEBRATION COUNT -->
+<div id="celebrate" class="screen hidden">
+  <div class="heartBox">
+    <div class="heart">
+      <div class="count" id="cNum">20</div>
+    </div>
+    <div class="name">My Dearest Wifuuu Priya Jii💘💘🌹</div>
+    <br>                             
+    <h2>Ektu Ektu Intezar Kariye.. Aur Butterflies Ko Andar Kar Lijiye🫣😁</h2>
+    <br>
+    <h2>Abhi Meri Sweetuuu Ek Dum Smile Kar Rahi Hai, Blush Kar Rahi Hai Na??👀👀</h2>
+    <br>
+    <h2>Meine Bhi Ek Camera Place Kar Diya Hai Na, Isiliye Sab Pata Chal Jata Hai!!😍😍</h2>
+  </div>
+</div>
+
+<!-- ❤️ FINAL -->
+<div id="final" class="screen hidden cinematic">
+  <h1>❤️ Once Again, A Very Very Happy Birthday To My Girl, The Deserving Princess 👑 ❤️</h1>
+  <br>
+  <h1 id="finalName" class="name-reveal">
+  ❤️ Priya Jii 😘😘 ❤️
+</h1>
+  <h3>Yaad Hai Na Babbuu Mere Birthday Ko Aapne Mere Liye Kitna Memorable Bana Diya Tha🥺🥺<br>
+      I Promised You That Day, I'll Make Your Birthday The Most Memorable One!! 👩‍❤️‍💋‍👨👩‍❤️‍💋‍👨</h3>
+  <br>
+  <h3>Ek Coincidence To Hai Babbuu, Ki Hamare Relationship Ki Iss Timeline Mei...<br>
+      Hum Dono Hi Apne First Birthday Pe Nahi Mill Sake, Since We Are Together🤧<br>
+      Bhale Hi Hum Sath Mai Nahi Hai Meri Ardhangini Jii,<br>
+      But Ye Gift Aapko Meri Presence, Aapke Paas Feel Karwa De...🫂🫂😘😘😘❤️❤️</h3>
+  <br>
+  <h3>Sweetuu I Want To Say A Few Words...</h3>
+  <br>
+  <h3>Mei Aapse Jitna Pyaar Aaj Karta Hu, Utna Hi Pyaar 60 Years Baad Bhi Karunga..🫣💕<br>
+      Just Hold My Hands And I'll Make You The Most Beautiful Experience In Your Life!!👀💗<br>
+      Mei Bas Aapko Apne Life Mei Bahut Successful Dekhna Chahta Hu,🫂🫂<br>
+      Aapka Muskurata Hua Chera Hamesha Dekhna Chahta Hu...🤌🤌<br>
+      You Also Know How Much I Love You, And I Also Know How Much You Love Me💞💝<br>
+      But The Last Thing, Mei Hamesha Kahunga Apni Life Mei Ki..👀👀<br>
+      I Loved You, I Love You And I Will Love You Forever 🫂🫂<br>
+      I'll Be Your Pookie Forever 🫂🫂🎀🎀</h3>
+  <br>
+  <h3>I Hope You Would Have Loved This Experience. Just Keep Smiling 😊<br>
+      Aur Naughtiness Kabhi Kam Nahi Honi Chahiye 😁<br>
+      Once Again, Happiest Birthday Meri Sweetheart 👀👀😘😘 </h3>
+  
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music/song.mp3">
+</audio>
+
+<audio id="bdaySong">
+  <source src="music/happy-birthday.mp3">
+</audio>
+
+<script>
+/* FLOWERS */
+const intro = document.getElementById("intro");
+setInterval(()=>{
+  if(!intro.classList.contains("hidden")){
+    const f=document.createElement("div");
+    f.className="flower";
+    f.innerHTML="🌹  🌸";
+    f.style.left=Math.random()*100+"vw";
+    intro.appendChild(f);
+    setTimeout(()=>f.remove(),6000);
+  }
+},300);
+
+/* INTRO FLOW */
+function toReady(){
+  intro.classList.add("hidden");
+  ready.classList.remove("hidden");
+}
+
+function introCountdown(){
+  ready.classList.add("hidden");
+  introCount.classList.remove("hidden");
+  let c=10;
+  const i=setInterval(()=>{
+    iNum.innerText=c--;
+    if(c<0){
+      clearInterval(i);
+      introCount.classList.add("hidden");
+      main.classList.remove("hidden");
+      typeLetter();
+      startHearts();
+    }
+  },1000);
+}
+
+/* LETTER */
+const text=`My Commander, Meri Maalkin 💝💖
+
+Jab Aapko Meine Pheli Baar Dekha Tha,👀
+Aankhon Hi Aankhon Mei Wo Pyaar Ho Gaya Tha!!💘
+Apki Wo Cute Si Sharatein, Dil Ko Bhaa Jati Hai,😍
+Aapki Muskurahat Dekh Yuu Mera Dil Pighal Jata Hai Ki Jyaa Bataye!!🫠
+Aap Aayi To Jindagi Ne Kyaa Hi Mast Turn Liya,😃
+Mujhe Ek Pookie Bana Kar Aapne Apna Ek Dream Pura Kiya!!😉
+Yuu To Aap Har Pal, Mere Dil Mei Apne Naam Ka Tuufan Le Aati Hai,😝
+Aapke Sath Bitaye Wo Sare Pal Dimmag Mei Ruk Jate Hai!!🤫
+If I Found A Diamond, It Was You. If I Found A Precious Thing, It Was You.🫶
+Aapke Pyaar Mei To Hum Yuu Giree, Ki Abb Kabhi Niklenge Nahi,👀
+Chahe Jamana Mujhe Aapke Khilaf Kitna Bhadkaye, Hum Aapko Kabhi Chorenge Nahi!!🫂
+Aap Sirf Meri Girlfriend, Wiffu, Sweetheart Aur Bahut Hi Sare Naam Infact To Ho,😁
+But Aap Mere Life Ki Bahut Sari Responsibilities Mei Se Ek Ho Wo Bhi Bahut Upar!!😘
+Aapko Har Pal Sambhal Ke Rakhu Waise Valuable Item Ho Aap Meri,🥰
+Aapse Har Waqt Mei Apna Pyaar Express Kar Saku Waise Jaan Ho Aap Meri!!💗💘
+Aur Aap Janti Hi Ho Whenever I Promise To Do Something, I Fulfill The Promise,😃
+Waise Hi Kuch Promises Meine Aapse Bhi Kiye Hai, Aur Mei Sab Complete Karunga!!🫂
+Aap Sirf Meri Maalto Nahi, Aap Meri Bestfriend, Meri Life, Meri Sab Kuch Ho Aap,👀
+Itna Open Sirf Aapse Aur Apni Maa Se Hu, Kyuki Wo Bond Hi Waisa Ban Chuka Hai!!🫶
+Bahut Sari Baatein Aap Ke Bare Mei Bol Saku. Lekin Shabd, Kittabe Sab Kam Pad Jaye,
+Aap Ho Itni Valuable, Precious, Fantastic, Amazing, Beautiful, Gorgeous, Everything Infact!!😘
+`;
+let idx=0;
+function typeLetter(){
+  if(idx<text.length){
+    letter.innerHTML+=text.charAt(idx++);
+    setTimeout(typeLetter,40);
+  }
+}
+
+/* MUSIC */
+let playing=false;
+function toggleMusic(){
+  playing?bgMusic.pause():bgMusic.play();
+  playing=!playing;
+}
+
+/* FLOAT HEARTS */
+function startHearts(){
+  setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="float";
+    h.innerHTML="❤️   💖   💗";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  },400);
+}
+
+function showSurprise(){
+  surprise.classList.remove("hidden");
+}
+
+  function stopMainMusic() {
+  const mainMusic = document.getElementById("bgMusic"); // ya jo id tune di hai
+  if (!mainMusic.paused) {
+    mainMusic.pause();
+    mainMusic.currentTime = 0; // start se dobara baj sake
+  }
+  }
+  function startCelebration() {
+  stopMainMusic(); // pehle main page music stop
+  // phir celebration countdown ya animation shuru
+  showCelebrationCountdown();
+  }
+  
+/* CELEBRATION */
+function startCelebration(){
+  celebrate.classList.remove("hidden");
+  let c=20;
+  const i=setInterval(()=>{
+    cNum.innerText=c--;
+    if(c<0){
+      clearInterval(i);
+      celebrate.innerHTML=`
+        <h1>🎉 A Small Celebration From My Side, Many Many Happy Returns Of The Day My Rasmalaiii 🎉</h1>
+        <div id="cake">🎂<div id="candles">🕯️🕯️🕯️</div></div>
+        <button class="btn" onclick="blow()">💨 Candles Blow Kariye Cutiepie 😄 </button>
+        <button id="cutBtn" class="btn hidden" onclick="cut()">🔪 Aaiye Cake Cutting Karte Hai Babbuu 🫂</button>
+        <button id="finishBtn" class="btn hidden" onclick="showFinal()">❤️ A Step Towards The End Of The Surprise 🫣 </button>
+      `;
+      startBalloons();
+    }
+  },1000);
+}
+
+function blow(){
+  candles.innerHTML="💨";
+  cutBtn.classList.remove("hidden");
+}
+
+function cut(){
+  const k=document.createElement("div");
+  k.id="knife";
+  k.innerHTML="🔪";
+  cake.appendChild(k);
+  confettiBlast();
+  bdaySong.play();
+  setTimeout(()=>{
+    cake.innerHTML="🍰 🍰";
+    finishBtn.classList.remove("hidden");
+  },1200);
+}
+
+function showFinal(){
+  celebrate.classList.add("hidden");
+  final.classList.remove("hidden");
+  final.classList.remove("cinematic"); // reset
+  void final.offsetWidth;              // reflow trick
+  final.classList.add("cinematic");    // cinematic replay
+  revealName();
+}
+
+function startBalloons(){
+  setInterval(()=>{
+    const b=document.createElement("div");
+    b.className="balloon";
+    b.innerHTML="🎈";
+    b.style.left=Math.random()*100+"vw";
+    document.body.appendChild(b);
+    setTimeout(()=>b.remove(),6000);
+  },300);
+}
+
+function confettiBlast(){
+  for(let i=0;i<120;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+    c.style.animationDuration=2+Math.random()*2+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+
+function revealName(){
+  const el = document.getElementById("finalName");
+  const text = el.innerText;
+  el.innerHTML = "";
+
+  [...text].forEach((char, i)=>{
+    const span = document.createElement("span");
+    span.innerText = char;
+    span.style.animationDelay = `${i * 0.5}s`;
+    el.appendChild(span);
+  });
+}
+
+</script>
+</body>
+      </html>
